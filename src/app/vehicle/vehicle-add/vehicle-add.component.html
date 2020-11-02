@@ -1,6 +1,4 @@
-<p>vehicle-add works!</p>
-
-<div class="card">
+<!-- <div class="card">
     <div class="card-header">
       <h4>{{service ? 'Update' : 'Add'}} Vehicle</h4>
     </div>
@@ -8,7 +6,7 @@
       <div class="form">
   
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-6">-md
             <div class="form-group">
               <label for="">Vehicle Name</label>
               <input [(ngModel)]="Vehicle_Name" type="text" class="form-control">
@@ -16,7 +14,7 @@
           </div>
   
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-6">-md
               <div class="form-group">
                 <label for="">Vehicle Company </label>
                 <input [(ngModel)]="Vehicle_Company" type="text" class="form-control">
@@ -24,7 +22,7 @@
             </div>
   
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-6">-md
                 <div class="form-group">
                   <label for="">Vehicle Model </label>
                   <input [(ngModel)]="Vehicle_Model" type="text" class="form-control">
@@ -45,3 +43,43 @@
                   </div>
                 </div>
               </div>
+ -->
+
+
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{service ? 'Update' : 'Add'}} Vehicle</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Vehicle Name</label>
+                        <input [(ngModel)]="Vehicle_Name" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Vehicle Company </label>
+                        <input [(ngModel)]="Vehicle_Company" type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Vehicle Model </label>
+                        <input [(ngModel)]="Vehicle_Model" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button (click)="onUpdate()" class="btn btn-success">{{service ? 'Update' : 'Add'}}</button>
+                    <a style="margin-left: 10px;" routerLink="/vehicle" class="btn btn-danger">Cancel</a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
