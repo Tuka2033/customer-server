@@ -1,3 +1,12 @@
+import { VehicleAddComponent } from './../../vehicle/vehicle-add/vehicle-add.component';
+import { VehicleListComponent } from './../../vehicle/vehicle-list/vehicle-list.component';
+import { ShopComponent } from './../../shop/shop.component';
+import { RegisterComponent } from './../../register/register.component';
+import { OrderHistoryComponent } from './../../order-history/order-history.component';
+import { OfferComponent } from './../../offer/offer.component';
+import { LoginComponent } from './../../login/login.component';
+import { FeedbackComponent } from './../../feedback/feedback.component';
+import { CartComponent } from './../../cart/cart.component';
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
@@ -17,5 +26,15 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
-    { path: 'upgrade',        component: UpgradeComponent }
+    { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'cart',        component: CartComponent },
+    { path: 'feedback',        component: FeedbackComponent },
+    { path: 'login',        component: LoginComponent },
+    { path: 'offer',        component: OfferComponent },
+    { path: 'order-history',        component: OrderHistoryComponent },
+    { path: 'register',        component: RegisterComponent },
+    { path: 'shop',        component: ShopComponent },
+    { path: 'vehicle',        component: VehicleListComponent },
+    { path: 'vehicle-add',        component: VehicleAddComponent }
+
 ];

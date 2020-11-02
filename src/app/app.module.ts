@@ -18,6 +18,9 @@ import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.compon
 import { VehicleAddComponent } from './vehicle/vehicle-add/vehicle-add.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     VehicleListComponent,
     VehicleAddComponent,
     CartComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    FeedbackComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,1 +1,43 @@
-<p>vehicle-list works!</p>
+
+<div class="container md-col-4">
+    <hr/>
+     <button (click)="addvehicle()" class="btn btn-success btn-sm float-right">Add</button>  
+
+    <h3>List of Vehicles</h3>
+
+
+    <table class="table" border="1" style="border-collapse: collapse;">
+        <thead>
+            <th scope="col">Sr.No</th>
+            <th>Vehicle Name</th>
+            <th>Vehicle Company</th>
+            <th>Vehicle Model</th>
+            <th>Vehicle Number</th>
+            
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehicle of vehicals; let index=index;">
+                 
+
+
+
+                <td>{{index+1}}</td>
+                <td>{{vehicle['Vehicle_Name']}}</td>
+                <td>{{vehicle['Vehicle_Company']}}</td>
+                <td>{{vehicle['Vehicle_Model']}}</td>
+                <td>{{vehicle['Vehicle_Number']}}</td>
+                
+               
+                <td>
+                    <button (click)="onEdit(vehicle)" style="margin-left: 10px;" class="btn btn-warning btn-sm">Edit</button>
+                    <button style="margin-left: 10px;" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+

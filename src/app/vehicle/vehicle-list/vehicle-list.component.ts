@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vehicle-list.component.css']
 })
 export class VehicleListComponent implements OnInit {
+  vehicals=[
+    {"Vehicle_Name":"Classic 350","Vehicle_Company":"Royal Enfield", "Vehicle_Model":"Classic", "Vehicle_Number":16},
+    {"Vehicle_Name":"Pulser","Vehicle_Company":"Bajaj", "Vehicle_Model":"Pulser220", "Vehicle_Number":15},
+    {"Vehicle_Name":"Apache","Vehicle_Company":"TVS", "Vehicle_Model":"Apache180", "Vehicle_Number":20},
 
-  constructor() { }
+   ]
+constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+}
+
+
+onEdit(vehicle)
+{
+   this.router.navigate(['/vehicle-add'],{queryParams:{id:vehicle['Vehicle_Number']}})
+
+}
+
+addvehicle()
+{
+
+this.router.navigate(['/vehicle-add'])
+}
 
 }
