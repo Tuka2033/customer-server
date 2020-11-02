@@ -12,12 +12,24 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ShopComponent } from './shop/shop.component';
+import { OfferComponent } from './offer/offer.component';
+import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
+import { VehicleAddComponent } from './vehicle/vehicle-add/vehicle-add.component';
+import { CartComponent } from './cart/cart.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    ShopComponent,
+    OfferComponent,
+    VehicleListComponent,
+    VehicleAddComponent,
+    CartComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserAnimationsModule,
