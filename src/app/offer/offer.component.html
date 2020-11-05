@@ -1,7 +1,17 @@
 
 
-
+    <marquee direction="left" speed="noraml" behavior="loop" >
+        
 <ng-container *ngFor="let offer of offers;" >
-  <a routerlink="">{{offer['discount']}}</a>
+  
+
+
+    <span class="btn btn-info" style="font-size: larger;"> {{offer['discount']}}% OFF </span>@<span class="btn-danger" style="font-size:medium;">{{offer['shop_name']}}</span> Use Coupon <span (click)="viewOffer(offer)" class="btn btn-success" style="font-size: larger;">{{offer['coupon']}}</span> 
+     
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
   
 </ng-container>
+
+</marquee>
