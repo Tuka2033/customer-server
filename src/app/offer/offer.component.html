@@ -1,13 +1,25 @@
 
 
-    <marquee direction="left" speed="noraml" behavior="loop" >
+    <marquee direction="left" speed="noraml" behavior="loop" bgcolor="#343a40" >
         
-<ng-container *ngFor="let offer of offers;" >
+<ng-container *ngFor="let offer of offers;" bgcolor="#343a40"  >
   
 
-
+<!-- <span class="bg-dark">
     <span class="btn btn-info" style="font-size: larger;"> {{offer['discount']}}% OFF </span>@<span class="btn-danger" style="font-size:medium;">{{offer['shop_name']}}</span> Use Coupon <span (click)="viewOffer(offer)" class="btn btn-success" style="font-size: larger;">{{offer['coupon']}}</span> 
-     
+
+</span> -->
+
+<div class="pulsate-bck rainbow" style=" display: inline-block;">
+    {{offer['discount']}}% OFF @{{offer['shop_name']}}
+
+</div>
+<span  style="color:whitesmoke;">
+    Use Coupon
+
+</span>
+<span (click)="viewOffer(offer)"  style="font-size: larger;" class="btn  btn-sm">{{offer['coupon']}}</span> 
+
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 
 
