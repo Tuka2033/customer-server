@@ -1,26 +1,24 @@
-<div class="card">
-    <div class="card-header">
-        <img src="" alt="shop">
-        <h3>
-            shop name
 
-        </h3>
-    </div>
-    <div class="card-body">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.</p>
-    </div>
-    <div class="card-footer">
-        <b>Rating </b>
-    </div>
-</div>
 
 <div class="row">
-    <div class="col-md-3">
+   <ng-container *ngFor="let shop of shops;">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://stevesorensenmechanical.com.au/wp-content/uploads/Under-Car-1030x688.jpg" alt="">
+                <h3>
+                    shop name
         
-    </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-3"></div>
-    <div class="col-md-3"></div>
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                    scrambled it to make a type specimen book</p>
+            </div>
+            <div class="card-footer">
+                <b>Rating </b>
+            </div>
+        </div>
+    </ng-container>
+    
 </div>
