@@ -1,20 +1,7 @@
 
 
 
-<table border="1" style="border-collapse:collapse" *ngIf="offers.length > 0" style="color:maroon;" style="background-color:mediumturquoise">
-<tr>
-      <th>OFFER NAME</th>
-      <th>SHOP NAME</th>
-      <th>OFFERS VALIDITY</th>
-      
-</tr>
-
-<tr *ngFor="let offer of offers">
-    <td>{{offer.offer_name}}</td>
-    <td>{{offer.shop_name}}</td>
-    <td>{{offer.validity}}</td>
-</tr>
-</table>
-
-
-
+<ng-container *ngFor="let offer of offers;" >
+  <a routerlink="">{{offer['discount']}}</a>
+  
+</ng-container>
