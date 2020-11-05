@@ -1,24 +1,29 @@
 
-
+<app-offer></app-offer>
 <div class="row">
-   <ng-container *ngFor="let shop of shops;">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">
-                <img src="https://stevesorensenmechanical.com.au/wp-content/uploads/Under-Car-1030x688.jpg" alt="">
-                <h3>
-                    shop name
-        
-                </h3>
+    <ng-container *ngFor="let shop of shops;">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <img [src]='shop.image' alt="">
+                    <h3>
+                        {{shop['name']}}
+
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h6>Description</h6>
+                    <p> {{shop['description']}}
+                    </p>
+                </div>
+                <div class="card-footer">
+                    Rating :
+                    <b> {{shop['rating']}}
+                    </b>
+                    <button class="btn btn-success float-right">View</button>
+                </div>
             </div>
-            <div class="card-body">
-                <p>                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                    scrambled it to make a type specimen book</p>
-            </div>
-            <div class="card-footer">
-                <b>Rating </b>
-            </div>
-        </div>
+        </div>   
     </ng-container>
-    
+
 </div>
