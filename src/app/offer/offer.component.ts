@@ -7,7 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfferComponent implements OnInit {
 
-  constructor() { }
+offers=[
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"},
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"},
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"},
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"},
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"},
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"},
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"},
+  {"offer_name":"Festive Dhanteras, Diwali Discount offer on Spare Parts for November 2020","shop_name":"Grace Motors","validity":"3/12/2020"}
+]
+
+  constructor() 
+  {
+
+  }
+
 
   ngOnInit(): void {
   }
