@@ -71,4 +71,12 @@ addvehicle()
 this.router.navigate(['/vehicle-add'])
 }
 
+
+onDelete(vehicle, index) {
+  const result = confirm(`Are you sure you want to delete product: ${vehicle['v_company_name']}?`)
+  if (result) {
+    this.vehicle.splice(index, 1)
+  }
+}
+
 }

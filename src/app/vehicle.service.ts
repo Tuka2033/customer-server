@@ -39,6 +39,8 @@ export class VehicleService {
 
   updateVehicle(v_id:number,v_company_name: string, v_model: string, v_regNo: string) {
     // add the token in the request header
+
+    console.log(v_id+"vehicle id")
     const httpOptions = {
      headers: new HttpHeaders({
       //  token: sessionStorage['token']

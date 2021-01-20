@@ -1,3 +1,4 @@
+import { ToastrModule } from 'ngx-toastr';
 import { VehicleService } from './../../vehicle.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,12 +16,13 @@ export class VehicleAddComponent implements OnInit {
   v_model=""
   v_regNo=""
 
+  id=null
 constructor(private activatedRoute: ActivatedRoute,private router: Router, private vehicleService:VehicleService) { }
 
 ngOnInit(): void {
 
   let id = this.activatedRoute.snapshot.queryParams['id']
-
+this.id=id
   console.log(id+'id')
   
    if (id>0) {
@@ -29,14 +31,14 @@ ngOnInit(): void {
       .getVehicleDetails(id)
       .subscribe(response => {
          if (response) {
-        console.log(response['v_company_name'])
+       
         this.v_company_name=response['v_company_name']
         this.v_model=response['v_model']
         this.v_regNo=response['v_regNo']
         // this.vehicle=response
            const vehicles = response
           // if (vehicles) {
-            this.vehicle = vehicles[0]
+            // this.vehicle = vehicles[0]
             // this.v_company_name = this.vehicle['v_company_name']
             // this.v_model = this.vehicle['v_model']
             // this.v_regNo = this.vehicle['v_regNo']
@@ -50,20 +52,25 @@ ngOnInit(): void {
 
 
    onUpdate() {
+     console.log(this.vehicle +"vehicle onupdate")
 
-    if (this.vehicle) {
+    if (this.vehicle>0) {
       // edit
+     console.log(this.vehicle +"onupdate")
+
       this.vehicleService
-        .updateVehicle(this.vehicle['v_id'], this.v_company_name,this.v_model,this.v_regNo)
+        .updateVehicle(this.id, this.v_company_name,this.v_model,this.v_regNo)
         .subscribe(response => {
          
+          // console.log(response)
           this.v_company_name=this.vehicle['v_company_name']
           this.v_model=this.vehicle['v_model']
           this.v_regNo=this.vehicle['v_regNo']
 
-          console.log(response)
+          console.log(this.vehicle['v_id']+"vhicle id update")
 
           // if (response['status'] == 'success') {
+         
             this.router.navigate(['/vehicle'])
           // }
         })
@@ -73,6 +80,13 @@ ngOnInit(): void {
         .insertVehicle(this.v_company_name,this.v_model,this.v_regNo)
         .subscribe(response => {
           // if (response['status'] == 'success') {
+            const vehicle = JSON.parse(localStorage.getItem('vehicle'));
+            console.log(vehicle.u_vehicles)
+            console.log(JSON.stringify(vehicle))
+            localStorage.setItem('vehicle',JSON.stringify(vehicle))
+            // console.log(localStorage.getItem('vehicle'))
+
+            // localStorage.setItem('vehicle',)
             this.router.navigate(['/vehicle'])
           // }
         })
