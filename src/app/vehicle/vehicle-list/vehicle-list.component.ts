@@ -1,7 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from 'app/vehicle.service';
-import { data } from 'jquery';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -9,28 +8,36 @@ import { data } from 'jquery';
   styleUrls: ['./vehicle-list.component.css']
 })
 export class VehicleListComponent implements OnInit {
-  vehicles :any =[]
-  // vehicals=[
+
+   vehicle:any = JSON.parse(localStorage.getItem('vehicle'));
+
+ 
+
+vehicals=[]
+
+  // vehicals=localStorage.getItem('u_vehicles')
+
+  // vehicals:any=[
   //   // {"Vehicle_Name":"Classic 350","Vehicle_Company":"Royal Enfield", "Vehicle_Model":"Classic", "Vehicle_Number":"16jj"},
   //   // {"Vehicle_Name":"Pulser","Vehicle_Company":"Bajaj", "Vehicle_Model":"Pulser220", "Vehicle_Number":"15kk"},
   //   // {"Vehicle_Name":"Apache","Vehicle_Company":"TVS", "Vehicle_Model":"Apache180", "Vehicle_Number":"20LH"},
 
   //  ]
-  constructor(private router: Router,private service:VehicleService) {
-    
-    //  const result=service.getVehicle()
-    // result.subscribe((response) => { 
-    //   if (response['Status'] = `success`)
-    //   {
-    //        response[`data`]
-    //    }
+constructor(private router: Router, private vehicleService:VehicleService ) { }
 
-      
-    // })
-    
-    
+ngOnInit(): void {
+  this.loadVehicles()
+  console.log(this.vehicle)
+  
+}
 
- }
+
+
+loadVehicles(){
+
+  this.vehicals=this.vehicle.u_vehicles
+
+}
 
   ngOnInit(): void {
     this.service.getAllVehicle().subscribe((result) => { 
@@ -46,15 +53,27 @@ export class VehicleListComponent implements OnInit {
   })
  }
 
- onUpdate(id,data) {
-  this.service.updateVehicleById(id,data).subscribe((result) => { 
-    this.vehicles=result
-  console.warn(result)
-})
-}
+
+
+// loadVehicles(){
+
+//  this.vehicleService.getVehicles().subscribe((res)=>{
+      
+
+    
+//         //  this.vehicals=res
+//         //  console.warn(res)
+//         //  console.log(res)
+
+      
+//     })
+  
+// }
+
+
 onEdit(vehicle)
 {
-   this.router.navigate(['/vehicle-add'],{queryParams:{id:vehicle['Vehicle_Number']}})
+   this.router.navigate(['/vehicle-add'],{queryParams:{id:vehicle['v_id']}})
 
 }
 
@@ -62,6 +81,14 @@ addvehicle()
 {
 
 this.router.navigate(['/vehicle-add'])
+}
+
+
+onDelete(vehicle, index) {
+  const result = confirm(`Are you sure you want to delete product: ${vehicle['v_company_name']}?`)
+  if (result) {
+    this.vehicle.splice(index, 1)
+  }
 }
 
 }

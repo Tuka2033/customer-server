@@ -2,6 +2,7 @@
   "name": "paper-dashboard-angular",
   "version": "2.2.0",
   "license": "MIT",
+  "start": "ng serve --proxy-config proxy.conf.json",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
@@ -37,6 +38,7 @@
     "moment": "2.29.1",
     "ngx-toastr": "13.1.0",
     "rxjs": "6.6.3",
+    "toastr": "^2.1.4",
     "tslib": "2.0.2",
     "zone.js": "0.11.1"
   },

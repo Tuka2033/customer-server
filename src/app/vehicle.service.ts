@@ -1,36 +1,83 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-const baseUrl = 'http://localhost:8080/user/Vehicle';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehicleService {
+  httpClient:HttpClient
+  
 
-  constructor(private httpclient:HttpClient) { }
-  getAllVehicle()
-  { 
-    const result = this.httpclient.get(baseUrl)
-    return result
+  url=`http://localhost:8080/user/vehicle`
+
+  constructor(httpClient:HttpClient) { 
+    this.httpClient=httpClient
+  }
+
+
+  getVehicles(){
+    const userid=localStorage.getItem('id')
+
+
+    return this.httpClient.get(this.url)
     
   }
-  getVehicleById(id)
-  { 
-    const result = this.httpclient.get(`${baseUrl}/${id}`)
-    return result
-    
+
+
+  getVehicleDetails(id) {
+    // add the token in the request header
+    const httpOptions = {
+     headers: new HttpHeaders({
+      //  token: sessionStorage['token']
+
+     })
+   };
+  console.log(this.url+"/"+id)
+
+   return this.httpClient.get(this.url  + "/"+id, httpOptions)
   }
-  updateVehicleById(id,data)
-  { 
-    const result = this.httpclient.put(`${baseUrl}/${id}`,data)
-    return result
+
+  updateVehicle(v_id:number,v_company_name: string, v_model: string, v_regNo: string) {
+    // add the token in the request header
+
+    console.log(v_id+"vehicle id")
+    const httpOptions = {
+     headers: new HttpHeaders({
+      //  token: sessionStorage['token']
+     })
+   };
+
+   const body = {
+    v_id:v_id,
+    v_company_name: v_company_name,
+    v_model: v_model,
+    v_regNo: v_regNo,
     
+   }
+   
+   return this.httpClient.put(this.url , body, httpOptions)
+ }
+
+ insertVehicle(v_company_name: string, v_model: string, v_regNo: string) {
+   // add the token in the request header
+   const httpOptions = {
+    headers: new HttpHeaders({
+      // token: sessionStorage['token']
+    })
+  };
+
+  const u_id=localStorage.getItem('id')
+
+  const body = {
+    v_company_name: v_company_name,
+    v_model: v_model,
+    v_regNo: v_regNo,
+    v_user:{
+      u_id:u_id
+    }
   }
-  deleteVehicleById(id)
-  { 
-    const result = this.httpclient.delete(`${baseUrl}/${id}`)
-    return result
-    
-  }
+  
+  return this.httpClient.post(this.url + "/create", body, httpOptions)
+}
+
 }
