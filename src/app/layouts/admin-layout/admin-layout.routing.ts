@@ -19,6 +19,7 @@ import { NotificationsComponent } from '../../pages/notifications/notifications.
 import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 
 export const AdminLayoutRoutes: Routes = [
+    { path: '',        component: DashboardComponent },
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TableComponent },
@@ -35,7 +36,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'register',        component: RegisterComponent },
     { path: 'shop',        component: ShopComponent },
     { path: 'vehicle',        component: VehicleListComponent },
-    { path: 'login',        component: LoginComponent },
+
     { path: 'vehicle-add',        component: VehicleAddComponent }
 
 ];
