@@ -39,21 +39,6 @@ loadVehicles(){
 
 }
 
-  ngOnInit(): void {
-    this.service.getAllVehicle().subscribe((result) => { 
-        this.vehicles=result
-      console.log(result)
-    })
-  
-}
-  getVehicleById(id) {
-    this.service.getVehicleById(id).subscribe((result) => { 
-      this.vehicles=result
-    console.log(result)
-  })
- }
-
-
 
 // loadVehicles(){
 
